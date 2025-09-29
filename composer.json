@@ -1,0 +1,45 @@
+{
+  "name": "antistatique/realforce-php-sdk",
+  "description": "Super-simple, minimum abstraction Realforce API v1.x wrapper, in PHP",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.3",
+    "ext-curl": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^12.3",
+    "symfony/dotenv": "^7.3",
+    "friendsofphp/php-cs-fixer": "^3.88",
+    "phpmd/phpmd": "^2.15",
+    "php-coveralls/php-coveralls": "^2.8",
+    "php-mock/php-mock-phpunit": "^2.13",
+    "vimeo/psalm": "^6.13",
+    "phpunit/php-code-coverage": "^12.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Antistatique\\Realforce\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Antistatique\\Realforce\\Tests\\": "tests/"
+    }
+  },
+  "homepage": "https://github.com/antistatique/realforce-php-sdk",
+  "authors": [
+    {
+      "name": "Antistatique SA",
+      "email": "info@antistatique.net",
+      "homepage": "https://www.antistatique.net",
+      "role": "Sponsor"
+    },
+    {
+      "name": "Kevin Wenger",
+      "email": "contact@kevin-wenger.ch",
+      "homepage": "http://kevin-wenger.ch",
+      "role": "Author & Maintainer"
+    }
+  ]
+}
