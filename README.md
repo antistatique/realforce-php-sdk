@@ -11,9 +11,6 @@ I hate complex wrappers. This lets you get from the Realforce API docs to the co
 [![License](https://poser.pugx.org/antistatique/realforce-php-sdk/license)](https://packagist.org/packages/antistatique/realforce-php-sdk)
 [![PHP Versions Supported](https://img.shields.io/badge/php-%3E%3D%208.3-8892BF.svg)](https://packagist.org/packages/antistatique/realforce-php-sdk)
 
-https://github.com/realforce/documentation
-https://www.realforce.com/developers
-
 Getting started
 ------------
 

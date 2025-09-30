@@ -20,11 +20,13 @@ final class ToArrayTest extends TestCase
     #[\PHPUnit\Framework\Attributes\DataProvider('isDistrictProvider')]
     #[\PHPUnit\Framework\Attributes\DataProvider('isZoneProvider')]
     #[\PHPUnit\Framework\Attributes\DataProvider('isQuarterProvider')]
+    #[\PHPUnit\Framework\Attributes\DataProvider('isCityProvider')]
     #[\PHPUnit\Framework\Attributes\DataProvider('countryProvider')]
     #[\PHPUnit\Framework\Attributes\DataProvider('cantonProvider')]
     #[\PHPUnit\Framework\Attributes\DataProvider('districtProvider')]
     #[\PHPUnit\Framework\Attributes\DataProvider('zoneProvider')]
     #[\PHPUnit\Framework\Attributes\DataProvider('quarterProvider')]
+    #[\PHPUnit\Framework\Attributes\DataProvider('cityProvider')]
     #[\PHPUnit\Framework\Attributes\DataProvider('locationsProvider')]
     public function testToArray(LocationsRequest $request, array $expected): void
     {
@@ -109,6 +111,17 @@ final class ToArrayTest extends TestCase
     }
 
     /**
+     * Data provider for isCity test cases.
+     */
+    public static function isCityProvider(): iterable
+    {
+        yield 'isCity On' => [
+            'request' => (new LocationsRequest())->lang(['fr'])->isCity(),
+            'expected' => ['lang' => 'fr', 'is_city' => 1],
+        ];
+    }
+
+    /**
      * Data provider for country filter test cases.
      */
     public static function countryProvider(): iterable
@@ -189,6 +202,22 @@ final class ToArrayTest extends TestCase
     }
 
     /**
+     * Data provider for city filter test cases.
+     */
+    public static function cityProvider(): iterable
+    {
+        yield 'city Identifier' => [
+            'request' => (new LocationsRequest())->lang(['fr'])->cityId(606),
+            'expected' => ['lang' => 'fr', 'city_id' => 606],
+        ];
+
+        yield 'city zero value' => [
+            'request' => (new LocationsRequest())->lang(['fr'])->cityId(0),
+            'expected' => ['lang' => 'fr', 'city_id' => 0],
+        ];
+    }
+
+    /**
      * Data provider for mixed configuration test cases.
      */
     public static function locationsProvider(): iterable
@@ -215,6 +244,7 @@ final class ToArrayTest extends TestCase
                 ->isCanton()
                 ->isDistrict()
                 ->isZone()
+                ->isCity()
                 ->isQuarter()
                 ->countryId(1)
                 ->cantonId(2)
@@ -228,6 +258,7 @@ final class ToArrayTest extends TestCase
                 'is_district' => 1,
                 'is_zone' => 1,
                 'is_quarter' => 1,
+                'is_city' => 1,
                 'country_id' => 1,
                 'canton_id' => 2,
                 'district_id' => 3,

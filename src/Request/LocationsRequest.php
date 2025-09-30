@@ -45,6 +45,13 @@ final class LocationsRequest
     private bool $isQuarter = false;
 
     /**
+     * Retrieve a list of city.
+     *
+     * @var bool
+     */
+    private bool $isCity = false;
+
+    /**
      * ID of a country to filter on.
      *
      * @var int|null
@@ -78,6 +85,13 @@ final class LocationsRequest
      * @var int|null
      */
     private ?int $quarterId = null;
+
+    /**
+     * ID of a city to filter on.
+     *
+     * @var int|null
+     */
+    private ?int $cityId = null;
 
     /**
      * Content languages in lower case (fr, en, it, de).
@@ -139,6 +153,16 @@ final class LocationsRequest
     }
 
     /**
+     * Set to retrieve a list of city.
+     */
+    public function isCity(): self
+    {
+        $this->isCity = true;
+
+        return $this;
+    }
+
+    /**
      * Set country ID to filter on.
      */
     public function countryId(int $countryId): self
@@ -189,6 +213,16 @@ final class LocationsRequest
     }
 
     /**
+     * Set city ID to filter on.
+     */
+    public function cityId(int $cityID): self
+    {
+        $this->cityId = $cityID;
+
+        return $this;
+    }
+
+    /**
      * Set content languages (fr, en, it, de).
      */
     public function lang(array $lang): self
@@ -227,6 +261,10 @@ final class LocationsRequest
             $params['is_quarter'] = 1;
         }
 
+        if ($this->isCity) {
+            $params['is_city'] = 1;
+        }
+
         if (null !== $this->countryId) {
             $params['country_id'] = $this->countryId;
         }
@@ -245,6 +283,10 @@ final class LocationsRequest
 
         if (null !== $this->quarterId) {
             $params['quarter_id'] = $this->quarterId;
+        }
+
+        if (null !== $this->cityId) {
+            $params['city_id'] = $this->cityId;
         }
 
         return $params;
