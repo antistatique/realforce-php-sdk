@@ -69,6 +69,73 @@ $response = $rf->publicProperties()->list($query);
 print_r($response);
 ```
 
+### Labels - Amenities
+
+Fetch "amenities" labels linked to the public data you retrieve from the public API endpoints.
+
+👉 https://github.com/realforce/documentation/blob/master/api-public/endpoints/labels-amenities.md
+
+```php
+# Setup the Realforce client.
+$realforce = new RealforceClient();
+$realforce->setApiToken($token);
+
+# Prepare the request.
+$query = new Antistatique\Realforce\Request\I18nRequest();
+$query
+  ->lang(['fr', 'en'])
+;
+
+# Fetch the list of amenities' labels.
+$response = $rf->publicLabels()->amenities($query);
+print_r($response);
+```
+
+### Labels - Categories
+
+Fetch "categories" labels linked to the public data you retrieve from the public API endpoints.
+
+👉 https://github.com/realforce/documentation/blob/master/api-public/endpoints/labels-categories.md
+
+```php
+# Setup the Realforce client.
+$realforce = new RealforceClient();
+$realforce->setApiToken($token);
+
+# Prepare the request.
+$query = new Antistatique\Realforce\Request\I18nRequest();
+$query
+  ->lang(['fr', 'en'])
+;
+
+# Fetch the list od categories' labels.
+$response = $rf->publicLabels()->categories($query);
+print_r($response);
+```
+
+### Labels - Categories
+
+Fetch "locations" labels linked to the public data you retrieve from the public API endpoints.
+
+👉 https://github.com/realforce/documentation/blob/master/api-public/endpoints/labels-locations.md
+
+```php
+# Setup the Realforce client.
+$realforce = new RealforceClient();
+$realforce->setApiToken($token);
+
+# Prepare the request.
+$query = new Antistatique\Realforce\Request\LocationsRequest();
+$query
+  ->isQuarter(true)
+  ->lang(['fr', 'en'])
+;
+
+# Fetch the list of locations' labels.
+$response = $rf->publicLabels()->locations($query);
+print_r($response);
+```
+
 Troubleshooting
 ---------------
 
