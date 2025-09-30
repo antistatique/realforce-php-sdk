@@ -3,6 +3,7 @@
 namespace Antistatique\Realforce\Tests\Unit\Client;
 
 use Antistatique\Realforce\RealforceClient;
+use Antistatique\Realforce\Resource\AbstractResource;
 use Antistatique\Realforce\Resource\PublicProperties;
 use Antistatique\Realforce\Resource\ResourceInterface;
 use PHPUnit\Framework\Attributes\CoversClass;
@@ -11,6 +12,7 @@ use PHPUnit\Framework\TestCase;
 
 #[CoversMethod(RealforceClient::class, '__call')]
 #[CoversClass(RealforceClient::class)]
+#[CoversClass(AbstractResource::class)]
 final class MagicCallTest extends TestCase
 {
     /**
