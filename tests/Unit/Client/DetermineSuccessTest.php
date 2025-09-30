@@ -56,9 +56,9 @@ final class DetermineSuccessTest extends TestCase
     }
 
     /**
-     * Test HTTP status error with additional message details.
+     * Test HTTP status error with additional message details (array).
      */
-    public function testDetermineSuccessHttpStatusFailWithMessageDetails(): void
+    public function testDetermineSuccessHttpStatusFailWithMessageArrayDetails(): void
     {
         $response = ['headers' => ['http_code' => 404]];
         $formattedResponse = [
@@ -67,6 +67,23 @@ final class DetermineSuccessTest extends TestCase
 
         $this->expectException(\Exception::class);
         $this->expectExceptionMessage('Unknown error, call getLastResponse() to find out what happened.');
+
+        $this->client->publicDetermineSuccess($response, $formattedResponse, 0);
+        self::assertFalse($this->client->getRequestSuccessful());
+    }
+
+    /**
+     * Test HTTP status error with string message details.
+     */
+    public function testDetermineSuccessHttpStatusFailWithStringMessageDetails(): void
+    {
+        $response = ['headers' => ['http_code' => 400]];
+        $formattedResponse = [
+            'message' => 'Invalid request parameters',
+        ];
+
+        $this->expectException(\Exception::class);
+        $this->expectExceptionMessage('400 Invalid request parameters');
 
         $this->client->publicDetermineSuccess($response, $formattedResponse, 0);
         self::assertFalse($this->client->getRequestSuccessful());
