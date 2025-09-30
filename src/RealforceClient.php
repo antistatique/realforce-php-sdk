@@ -13,6 +13,7 @@ use Antistatique\Realforce\Resource\ResourceInterface;
  * Every request should contain a valid API token.
  *
  * @method \Antistatique\Realforce\Resource\PublicProperties publicProperties()
+ * @method \Antistatique\Realforce\Resource\PublicLabels     publicLabels()
  */
 class RealforceClient
 {

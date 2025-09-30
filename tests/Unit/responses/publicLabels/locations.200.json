@@ -1,0 +1,35 @@
+{
+  "199": {
+    "country_id": "210",
+    "canton_id": "22",
+    "district_id": "6",
+    "zone_id": "10",
+    "labels": {
+      "fr": "Lausanne",
+      "en": "Lausanne",
+      "de": "Lausanne"
+    }
+  },
+  "370": {
+    "country_id": "210",
+    "canton_id": "25",
+    "district_id": "1",
+    "zone_id": "3",
+    "labels": {
+      "fr": "Anières",
+      "en": "Anières",
+      "de": "Anières"
+    }
+  },
+  "385": {
+    "country_id": "210",
+    "canton_id": "25",
+    "district_id": "1",
+    "zone_id": "3",
+    "labels": {
+      "fr": "Cologny",
+      "en": "Cologny",
+      "de": "Cologny"
+    }
+  }
+}

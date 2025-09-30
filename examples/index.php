@@ -22,6 +22,9 @@ include_once 'templates/base.php';
 
 <ul>
     <li><a href="resources/properties/public/list.php">Listing of Properties</a></li>
+    <li><a href="resources/labels/public/locations.php">Labels - Locations</a></li>
+    <li><a href="resources/labels/public/categories.php">Labels - Categories</a></li>
+    <li><a href="resources/labels/public/amenities.php">Labels - Amenities</a></li>
 </ul>
 
 <?php echo pageFooter(); ?>
