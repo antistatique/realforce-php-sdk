@@ -6,10 +6,14 @@ use Antistatique\Realforce\RealforceClient;
 use Antistatique\Realforce\Request\LocationsRequest;
 use Antistatique\Realforce\Resource\AbstractResource;
 use Antistatique\Realforce\Resource\PublicLabels;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 
 #[CoversMethod(PublicLabels::class, 'locations')]
+#[CoversClass(RealforceClient::class)]
+#[CoversClass(AbstractResource::class)]
+#[CoversClass(LocationsRequest::class)]
 final class LocationsTest extends TestCase
 {
     public function testIsAbstractResource(): void

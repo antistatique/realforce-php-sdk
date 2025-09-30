@@ -24,4 +24,12 @@
             <directory>src</directory>
         </include>
     </source>
+
+    <coverage ignoreDeprecatedCodeUnits="true"
+              disableCodeCoverageIgnore="true">
+        <report>
+            <clover outputFile="./build/logs/clover.xml"/>
+            <html outputDirectory="./build/logs/coverage-html"/>
+        </report>
+    </coverage>
 </phpunit>

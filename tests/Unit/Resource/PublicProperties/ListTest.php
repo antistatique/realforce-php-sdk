@@ -6,10 +6,14 @@ use Antistatique\Realforce\RealforceClient;
 use Antistatique\Realforce\Request\PropertiesListRequest;
 use Antistatique\Realforce\Resource\AbstractResource;
 use Antistatique\Realforce\Resource\PublicProperties;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 
 #[CoversMethod(PublicProperties::class, 'list')]
+#[CoversClass(RealforceClient::class)]
+#[CoversClass(AbstractResource::class)]
+#[CoversClass(PropertiesListRequest::class)]
 final class ListTest extends TestCase
 {
     public function testIsAbstractResource(): void

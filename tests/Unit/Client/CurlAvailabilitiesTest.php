@@ -4,11 +4,13 @@ namespace Antistatique\Realforce\Tests\Unit\Client;
 
 use Antistatique\Realforce\RealforceClient;
 use phpmock\phpunit\PHPMock;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\Attributes\DoesNotPerformAssertions;
 use PHPUnit\Framework\TestCase;
 
 #[CoversMethod(RealforceClient::class, 'isCurlAvailable')]
+#[CoversClass(RealforceClient::class)]
 final class CurlAvailabilitiesTest extends TestCase
 {
     use PHPMock;

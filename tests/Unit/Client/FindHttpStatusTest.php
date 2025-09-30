@@ -3,10 +3,12 @@
 namespace Antistatique\Realforce\Tests\Unit\Client;
 
 use Antistatique\Realforce\RealforceClient;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 
 #[CoversMethod(RealforceClient::class, 'findHttpStatus')]
+#[CoversClass(RealforceClient::class)]
 final class FindHttpStatusTest extends TestCase
 {
     /**

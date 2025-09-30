@@ -6,10 +6,14 @@ use Antistatique\Realforce\RealforceClient;
 use Antistatique\Realforce\Request\I18nRequest;
 use Antistatique\Realforce\Resource\AbstractResource;
 use Antistatique\Realforce\Resource\PublicLabels;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\CoversMethod;
 use PHPUnit\Framework\TestCase;
 
 #[CoversMethod(PublicLabels::class, 'categories')]
+#[CoversClass(RealforceClient::class)]
+#[CoversClass(AbstractResource::class)]
+#[CoversClass(I18nRequest::class)]
 final class CategoriesTest extends TestCase
 {
     public function testIsAbstractResource(): void
