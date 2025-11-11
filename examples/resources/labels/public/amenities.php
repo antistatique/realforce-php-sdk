@@ -22,8 +22,14 @@ $rf->setApiToken($envs['REALFORCE_API_TOKEN']);
 
 $query = new Antistatique\Realforce\Request\I18nRequest();
 $query->lang(['fr']);
-$response = $rf->publicLabels()->amenities($query);
+$responseAmenities = $rf->publicLabels()->amenities($query);
+$responseCategories = $rf->publicLabels()->amenitiesCategories($query);
+$responseGroups = $rf->publicLabels()->amenitiesGroups($query);
 
 ?>
 
-<?php echo renderResponse('French public amenities', $response); ?>
+<?php echo renderResponse('French public amenities', $responseAmenities); ?>
+
+<?php echo renderResponse('French Amenities categories', $responseCategories); ?>
+
+<?php echo renderResponse('Amenities groups', $responseGroups); ?>
