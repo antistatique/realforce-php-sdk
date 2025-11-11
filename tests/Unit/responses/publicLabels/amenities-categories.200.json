@@ -1,0 +1,46 @@
+{
+  "2": {
+    "fr": "Extérieur",
+    "en": "Exterior"
+  },
+  "3": {
+    "fr": "Intérieur",
+    "en": "Interior"
+  },
+  "10": {
+    "fr": "Services",
+    "en": "Services"
+  },
+  "11": {
+    "fr": "Shopping \/ Commerce",
+    "en": "Shopping"
+  },
+  "12": {
+    "fr": "Loisirs",
+    "en": "Hobbies"
+  },
+  "13": {
+    "fr": "Accès \/ Transports",
+    "en": "Transports"
+  },
+  "14": {
+    "fr": "Environnement",
+    "en": "Surroundings"
+  },
+  "15": {
+    "fr": "Points positifs",
+    "en": "Good points"
+  },
+  "16": {
+    "fr": "Revêtements",
+    "en": "Coverings"
+  },
+  "17": {
+    "fr": "Equipement technique",
+    "en": "Technical equipment"
+  },
+  "18": {
+    "fr": "Pièces",
+    "en": "Rooms"
+  }
+}

@@ -36,6 +36,36 @@ final class PublicLabels extends AbstractResource
     }
 
     /**
+     * Fetch "amenities categories" labels linked to the public data you retrieve from the public API endpoints.
+     *
+     * @param I18nRequest $request the request parameters
+     * @param int         $timeout timeout limit for request in seconds
+     *
+     * @return array|bool a decoded array of result or a boolean on unattended response
+     *
+     * @throws \Exception
+     */
+    public function amenitiesCategories(I18nRequest $request, int $timeout = RealforceClient::TIMEOUT)
+    {
+        return $this->getClient()->makeRequest('get', self::BASE_URL.'/get-amenities-categories-labels', $request->toArray(), $timeout);
+    }
+
+    /**
+     * Fetch "amenities groups" to place each amenity within its amenity-category.
+     *
+     * @param I18nRequest $request the request parameters
+     * @param int         $timeout timeout limit for request in seconds
+     *
+     * @return array|bool a decoded array of result or a boolean on unattended response
+     *
+     * @throws \Exception
+     */
+    public function amenitiesGroups(I18nRequest $request, int $timeout = RealforceClient::TIMEOUT)
+    {
+        return $this->getClient()->makeRequest('get', self::BASE_URL.'/get-amenities-groups', $request->toArray(), $timeout);
+    }
+
+    /**
      * Fetch "categories" labels linked to the public data you retrieve from the public API endpoints.
      *
      * @param I18nRequest $request the request parameters

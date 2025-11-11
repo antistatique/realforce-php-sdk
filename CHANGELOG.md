@@ -7,3 +7,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - Under heavy development
+- add support for Amenities Categories
+- add support for Amenities Groups
