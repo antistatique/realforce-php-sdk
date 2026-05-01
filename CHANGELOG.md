@@ -13,3 +13,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - test(coverage): increase coverage by covering RealforceClient::success
 - test(coverage): increase coverage by covering RealforceClient::getLastError
 - test(coverage): increase coverage by covering RealforceClient::getLastResponseHttpStatus
+- test(coverage): increase coverage by covering LocationsRequest getters & setters
