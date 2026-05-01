@@ -10,3 +10,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add support for Amenities Categories
 - add support for Amenities Groups
 - test(coverage): increase coverage by covering PropertiesListRequest::updatedBefore/updatedAfter
+- test(coverage): increase coverage by covering RealforceClient::success
+- test(coverage): increase coverage by covering RealforceClient::getLastError
+- test(coverage): increase coverage by covering RealforceClient::getLastResponseHttpStatus
