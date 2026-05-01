@@ -9,3 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Under heavy development
 - add support for Amenities Categories
 - add support for Amenities Groups
+- test(coverage): increase coverage by covering PropertiesListRequest::updatedBefore/updatedAfter
