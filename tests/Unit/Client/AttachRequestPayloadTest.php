@@ -39,8 +39,6 @@ final class AttachRequestPayloadTest extends TestCase
 
         $info = curl_getinfo($curl);
         self::assertNotEmpty($info);
-
-        curl_close($curl);
     }
 
     /**
@@ -64,8 +62,6 @@ final class AttachRequestPayloadTest extends TestCase
             '{"parent":{"child1":"value1","child2":"value2"}}',
             $lastRequest['body']
         );
-
-        curl_close($curl);
     }
 
     /**
@@ -88,8 +84,6 @@ final class AttachRequestPayloadTest extends TestCase
         $decoded = json_decode($lastRequest['body'], true);
         self::assertSame('test & value > test', $decoded['special']);
         self::assertSame('été', $decoded['unicode']);
-
-        curl_close($curl);
     }
 
     /**
@@ -105,8 +99,6 @@ final class AttachRequestPayloadTest extends TestCase
         $lastRequest = $this->client->getLastRequest();
         self::assertArrayHasKey('body', $lastRequest);
         self::assertJsonStringEqualsJsonString('[]', $lastRequest['body']);
-
-        curl_close($curl);
     }
 }
 
