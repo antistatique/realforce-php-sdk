@@ -11,6 +11,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - fix(composer): bound the php constraint (>=8.3 => ^8.3)
 
+### Removed
+- chore(deps): drop unused phpmd/phpmd dev dependency
+
 ## [1.0.0] - 2026-08-24
 ### Added
 - Under heavy development
