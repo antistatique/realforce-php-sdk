@@ -23,7 +23,7 @@ final class CurlAvailabilitiesTest extends TestCase
 
     public function testCurlNotAvailable(): void
     {
-        $realforceMock = $this->createMock(RealforceClient::class);
+        $realforceMock = $this->createStub(RealforceClient::class);
         $realforceMock->method('isCurlAvailable')->willReturn(false);
 
         $this->expectException(\RuntimeException::class);
@@ -36,7 +36,7 @@ final class CurlAvailabilitiesTest extends TestCase
     #[DoesNotPerformAssertions]
     public function testCurlAvailable(): void
     {
-        $realforceMock = $this->createMock(RealforceClient::class);
+        $realforceMock = $this->createStub(RealforceClient::class);
         $realforceMock->method('isCurlAvailable')->willReturn(true);
         $realforceMock->__construct();
     }

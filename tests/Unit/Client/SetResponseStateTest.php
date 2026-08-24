@@ -44,8 +44,6 @@ final class SetResponseStateTest extends TestCase
         self::assertIsArray($result['httpHeaders']);
         self::assertArrayHasKey('Content-Type', $result['httpHeaders']);
         self::assertStringContainsString('{"key":"value"}', $result['body']);
-
-        curl_close($curl);
     }
 
     /**
@@ -58,8 +56,6 @@ final class SetResponseStateTest extends TestCase
 
         $this->expectException(\Exception::class);
         $this->client->publicSetResponseState($response, false, $curl);
-
-        curl_close($curl);
     }
 
     /**
@@ -81,8 +77,6 @@ final class SetResponseStateTest extends TestCase
         $lastRequest = $this->client->getLastRequest();
         self::assertArrayHasKey('headers', $lastRequest);
         self::assertSame('GET /endpoint HTTP/1.1', $lastRequest['headers']);
-
-        curl_close($curl);
     }
 
     /**
@@ -103,8 +97,6 @@ final class SetResponseStateTest extends TestCase
         self::assertIsArray($result);
         self::assertEmpty($result['body']);
         self::assertEmpty($result['httpHeaders']);
-
-        curl_close($curl);
     }
 
     /**
@@ -127,8 +119,6 @@ final class SetResponseStateTest extends TestCase
         self::assertArrayHasKey('Authorization', $result['httpHeaders']);
         self::assertArrayHasKey('Accept', $result['httpHeaders']);
         self::assertStringContainsString('{"data":"test"}', $result['body']);
-
-        curl_close($curl);
     }
 }
 
