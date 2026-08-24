@@ -18,9 +18,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix(resource): build endpoint URLs without a duplicated slash
 - fix(curl): type cURL handles as CurlHandle and check curl_init failure
 
-### Removed
-- chore(deps): drop unused phpmd/phpmd dev dependency
-
 ## [1.0.0] - 2026-08-24
 ### Added
 - Under heavy development
