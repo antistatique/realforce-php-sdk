@@ -29,6 +29,6 @@ final class PublicProperties extends AbstractResource
      */
     public function list(PropertiesListRequest $request, int $timeout = RealforceClient::TIMEOUT)
     {
-        return $this->getClient()->makeRequest('get', self::BASE_URL.'/get-full-listings', $request->toArray(), $timeout);
+        return $this->getClient()->makeRequest('get', self::BASE_URL.'get-full-listings', $request->toArray(), $timeout);
     }
 }

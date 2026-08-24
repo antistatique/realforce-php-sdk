@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- test(resource): assert verb, URL and timeout passed to makeRequest
+
 ### Fixed
 - fix(dependabot): remove config that silently disabled all version updates
 
@@ -12,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix(composer): bound the php constraint (>=8.3 => ^8.3)
 - fix(ci): run workflows on pull_request so fork contributions get CI
 - fix(php85): remove deprecated calls and fail the suite on new ones
+- fix(resource): build endpoint URLs without a duplicated slash
 
 ### Removed
 - chore(deps): drop unused phpmd/phpmd dev dependency

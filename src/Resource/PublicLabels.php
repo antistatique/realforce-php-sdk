@@ -32,7 +32,7 @@ final class PublicLabels extends AbstractResource
      */
     public function amenities(I18nRequest $request, int $timeout = RealforceClient::TIMEOUT)
     {
-        return $this->getClient()->makeRequest('get', self::BASE_URL.'/get-amenities-labels', $request->toArray(), $timeout);
+        return $this->getClient()->makeRequest('get', self::BASE_URL.'get-amenities-labels', $request->toArray(), $timeout);
     }
 
     /**
@@ -47,7 +47,7 @@ final class PublicLabels extends AbstractResource
      */
     public function amenitiesCategories(I18nRequest $request, int $timeout = RealforceClient::TIMEOUT)
     {
-        return $this->getClient()->makeRequest('get', self::BASE_URL.'/get-amenities-categories-labels', $request->toArray(), $timeout);
+        return $this->getClient()->makeRequest('get', self::BASE_URL.'get-amenities-categories-labels', $request->toArray(), $timeout);
     }
 
     /**
@@ -62,7 +62,7 @@ final class PublicLabels extends AbstractResource
      */
     public function amenitiesGroups(I18nRequest $request, int $timeout = RealforceClient::TIMEOUT)
     {
-        return $this->getClient()->makeRequest('get', self::BASE_URL.'/get-amenities-groups', $request->toArray(), $timeout);
+        return $this->getClient()->makeRequest('get', self::BASE_URL.'get-amenities-groups', $request->toArray(), $timeout);
     }
 
     /**
@@ -77,7 +77,7 @@ final class PublicLabels extends AbstractResource
      */
     public function categories(I18nRequest $request, int $timeout = RealforceClient::TIMEOUT)
     {
-        return $this->getClient()->makeRequest('get', self::BASE_URL.'/get-categories-labels', $request->toArray(), $timeout);
+        return $this->getClient()->makeRequest('get', self::BASE_URL.'get-categories-labels', $request->toArray(), $timeout);
     }
 
     /**
@@ -92,6 +92,6 @@ final class PublicLabels extends AbstractResource
      */
     public function locations(LocationsRequest $request, int $timeout = RealforceClient::TIMEOUT)
     {
-        return $this->getClient()->makeRequest('get', self::BASE_URL.'/get-locations', $request->toArray(), $timeout);
+        return $this->getClient()->makeRequest('get', self::BASE_URL.'get-locations', $request->toArray(), $timeout);
     }
 }

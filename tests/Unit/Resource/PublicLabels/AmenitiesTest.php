@@ -27,15 +27,17 @@ final class AmenitiesTest extends TestCase
     {
         $response = json_decode(file_get_contents(__DIR__.'/../../responses/publicLabels/amenities.200.json'), true, 512, JSON_THROW_ON_ERROR);
 
+        $query = (new I18nRequest())->lang(['en']);
+
         $rf_mock = $this->getMockBuilder(RealforceClient::class)
           ->onlyMethods(['makeRequest'])
           ->getMock();
 
         $rf_mock->expects(self::once())
           ->method('makeRequest')
+          ->with('get', 'https://labels.realforce.ch/api/v1/get-amenities-labels', $query->toArray(), RealforceClient::TIMEOUT)
           ->willReturn($response);
 
-        $query = (new I18nRequest())->lang(['en']);
         $response = $rf_mock->publicLabels()->amenities($query);
         self::assertIsArray($response);
     }
