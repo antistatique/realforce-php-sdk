@@ -15,3 +15,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - test(coverage): increase coverage by covering RealforceClient::getLastResponseHttpStatus
 - test(coverage): increase coverage by covering LocationsRequest getters & setters
 - feat(php): add official support for PHP 8.5
+
+### Fixed
+- fix(dependabot): remove config that silently disabled all version updates
