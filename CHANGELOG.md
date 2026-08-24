@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix(ci): run workflows on pull_request so fork contributions get CI
 - fix(php85): remove deprecated calls and fail the suite on new ones
 - fix(resource): build endpoint URLs without a duplicated slash
+- fix(curl): type cURL handles as CurlHandle and check curl_init failure
 
 ### Removed
 - chore(deps): drop unused phpmd/phpmd dev dependency

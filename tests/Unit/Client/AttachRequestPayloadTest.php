@@ -110,7 +110,7 @@ final class AttachRequestPayloadTestableRealforceClient extends RealforceClient
     /**
      * {@inheritdoc}
      */
-    public function publicAttachRequestPayload(\CurlHandle &$curl, array $data): void
+    public function publicAttachRequestPayload(\CurlHandle $curl, array $data): void
     {
         $this->attachRequestPayload($curl, $data);
     }
