@@ -323,14 +323,14 @@ final class MakeRequestTestableRealforceClient extends RealforceClient
         ];
     }
 
-    protected function attachRequestPayload(&$curl, array $data): void
+    protected function attachRequestPayload(\CurlHandle $curl, array $data): void
     {
         $encoded = json_encode($data, \JSON_THROW_ON_ERROR);
         $this->lastRequest['body'] = $encoded;
         // Mock curl_setopt for CURLOPT_POSTFIELDS
     }
 
-    protected function setResponseState(array $response, $response_content, $curl): array
+    protected function setResponseState(array $response, bool|string $response_content, \CurlHandle $curl): array
     {
         // Mock the response state setting
         $this->lastRequest['headers_string'] = $this->buildHeadersString();
