@@ -23,7 +23,7 @@ abstract class AbstractResource implements ResourceInterface
      */
     public function __construct(RealforceClient $realforceClient)
     {
-        $this->setClient($realforceClient);
+        $this->realforceClient = $realforceClient;
     }
 
     /**

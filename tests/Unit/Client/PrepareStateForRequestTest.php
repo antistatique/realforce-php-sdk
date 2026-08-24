@@ -96,6 +96,18 @@ final class PrepareStateForRequestTest extends TestCase
     }
 
     /**
+     * parse_url() returns FALSE on a malformed URL; feeding that into the
+     * request state used to fail with "Unsupported operand types: bool + array".
+     */
+    public function testPrepareStateForRequestThrowsOnMalformedUrl(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        $this->expectExceptionMessage('Malformed URL: http://');
+
+        $this->client->publicPrepareStateForRequest('get', 'http://', 10);
+    }
+
+    /**
      * Tests prepareStateForRequest with different timeouts.
      */
     public function testPrepareStateForRequestTimeouts(): void

@@ -18,7 +18,7 @@ final class PublicLabels extends AbstractResource
     /**
      * The Realforce Labels base API URL.
      */
-    public const BASE_URL = 'https://labels.realforce.ch/api/v1/';
+    public const string BASE_URL = 'https://labels.realforce.ch/api/v1/';
 
     /**
      * Fetch "amenities" labels linked to the public data you retrieve from the public API endpoints.

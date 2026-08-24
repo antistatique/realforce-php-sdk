@@ -271,8 +271,8 @@ final class ToArrayTest extends TestCase
     public function testMandatoryProperties(): void
     {
         $request = new LocationsRequest();
-        $this->expectException(\Error::class);
-        $this->expectExceptionMessage('Typed property Antistatique\Realforce\Request\LocationsRequest::$lang must not be accessed before initialization');
+        $this->expectException(\LogicException::class);
+        $this->expectExceptionMessage('The "lang" parameter is mandatory, call lang() before toArray().');
         $request->toArray();
     }
 }

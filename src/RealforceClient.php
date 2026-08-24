@@ -14,6 +14,8 @@ use Antistatique\Realforce\Resource\ResourceInterface;
  *
  * @method \Antistatique\Realforce\Resource\PublicProperties publicProperties()
  * @method \Antistatique\Realforce\Resource\PublicLabels     publicLabels()
+ *
+ * @api
  */
 class RealforceClient
 {
@@ -22,14 +24,14 @@ class RealforceClient
      *
      * @var int
      */
-    public const TIMEOUT = 10;
+    public const int TIMEOUT = 10;
 
     /**
      * Realforce FQD class to be automatically discovered.
      *
      * @var string
      */
-    private const FQN_CLASS = '\\Antistatique\\Realforce\\Resource\\';
+    private const string FQN_CLASS = '\\Antistatique\\Realforce\\Resource\\';
 
     /**
      * SSL Verification.
@@ -116,7 +118,13 @@ class RealforceClient
                 throw new \InvalidArgumentException(sprintf('Undefined API class %s', $apiClass));
             }
 
-            return new $apiFQNClass($this);
+            $resource = new $apiFQNClass($this);
+
+            if (!$resource instanceof ResourceInterface) {
+                throw new \InvalidArgumentException(sprintf('API class %s is not a %s', $apiClass, ResourceInterface::class));
+            }
+
+            return $resource;
         } catch (\InvalidArgumentException $e) {
             throw new \BadMethodCallException(sprintf('Undefined method %s', $name));
         }
@@ -342,8 +350,10 @@ class RealforceClient
         ];
 
         // add Authorization token for any verb.
-        if ($this->getApiToken()) {
-            $httpHeader[] = "X-API-KEY: {$this->getApiToken()}";
+        $apiToken = $this->getApiToken();
+
+        if (null !== $apiToken && '' !== $apiToken) {
+            $httpHeader[] = "X-API-KEY: {$apiToken}";
         }
 
         if ('put' === $http_verb) {
@@ -407,13 +417,14 @@ class RealforceClient
 
         unset($curl);
 
-        if (!$formattedResponse) {
+        if (false === $formattedResponse) {
             return false;
         }
 
-        $isSuccess = $this->determineSuccess($response, $formattedResponse, $timeout);
+        // Throws on any non-2xx status; the return value is always TRUE here.
+        $this->determineSuccess($response, $formattedResponse, $timeout);
 
-        return \is_array($formattedResponse) ? $formattedResponse : $isSuccess;
+        return $formattedResponse;
     }
 
     /**
@@ -428,6 +439,13 @@ class RealforceClient
     protected function prepareStateForRequest(string $http_verb, string $url, int $timeout): array
     {
         $parts = parse_url($url);
+
+        if (false === $parts) {
+            $this->lastError = sprintf('Malformed URL: %s', $url);
+
+            throw new \InvalidArgumentException($this->lastError);
+        }
+
         $this->lastError = '';
 
         $this->requestSuccessful = false;

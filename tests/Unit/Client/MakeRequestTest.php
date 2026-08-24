@@ -248,6 +248,21 @@ final class MakeRequestTest extends TestCase
     }
 
     /**
+     * An empty - but valid - JSON body is a successful response.
+     *
+     * formatResponse() returns [] for an empty body, which used to be treated
+     * as a failure because an empty array is falsy.
+     */
+    public function testMakeRequestEmptyBodyIsNotAFailure(): void
+    {
+        $this->client->setMockFormatResponse([]);
+
+        $result = $this->client->makeRequest('get', 'https://api.example.com/test', [], 30);
+
+        self::assertSame([], $result);
+    }
+
+    /**
      * Test empty args array handling.
      */
     public function testMakeRequestEmptyArgs(): void

@@ -98,9 +98,9 @@ final class LocationsRequest
      *
      * Multiple languages can be retrieved using the "pipe" (|) separator.
      *
-     * @var string
+     * @var string|null
      */
-    private string $lang;
+    private ?string $lang = null;
 
     /**
      * Set to retrieve a list of countries.
@@ -234,9 +234,15 @@ final class LocationsRequest
 
     /**
      * Convert the request to an array for API consumption.
+     *
+     * @throws \LogicException when the mandatory "lang" parameter is missing
      */
     public function toArray(): array
     {
+        if (null === $this->lang) {
+            throw new \LogicException('The "lang" parameter is mandatory, call lang() before toArray().');
+        }
+
         $params = [];
 
         $params['lang'] = $this->lang;
