@@ -108,6 +108,23 @@ final class MagicCallTest extends TestCase
     }
 
     /**
+     * class_exists() proves the class is there, not that it is a resource.
+     */
+    public function testMagicCallRejectsClassThatIsNotAResource(): void
+    {
+        $fqn = 'Antistatique\\Realforce\\Resource\\NotAResource';
+
+        if (!class_exists($fqn, false)) {
+            eval('namespace Antistatique\\Realforce\\Resource; class NotAResource {}');
+        }
+
+        $this->expectException(\BadMethodCallException::class);
+        $this->expectExceptionMessage('API class NotAResource is not a '.ResourceInterface::class);
+
+        $this->client->notAResource();
+    }
+
+    /**
      * Test multiple calls return different instances.
      */
     public function testMagicCallReturnsNewInstances(): void

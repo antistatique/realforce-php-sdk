@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 - test(resource): assert verb, URL and timeout passed to makeRequest
+- test(coverage): cover the __call resource-type guard
 
 ### Fixed
 - fix(dependabot): remove config that silently disabled all version updates
@@ -18,6 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix(auth): send the X-API-KEY header for a falsy-but-valid token
 - fix(http): treat an empty 2xx body as a success instead of a failure
 - fix(request): raise a LogicException when the mandatory lang is missing
+- fix(api): tighten getApiToken/getLastError return types and unmask __call errors
 
 ### Changed
 - fix(composer): bound the php constraint (>=8.3 => ^8.3)
