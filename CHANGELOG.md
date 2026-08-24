@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 - fix(composer): bound the php constraint (>=8.3 => ^8.3)
+- fix(ci): run workflows on pull_request so fork contributions get CI
 
 ### Removed
 - chore(deps): drop unused phpmd/phpmd dev dependency
