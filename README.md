@@ -9,7 +9,7 @@ I hate complex wrappers. This lets you get from the Realforce API docs to the co
 [![Coverage Status](https://coveralls.io/repos/github/antistatique/realforce-php-sdk/badge.svg)](https://coveralls.io/github/antistatique/realforce-php-sdk)
 [![Packagist](https://img.shields.io/packagist/dt/antistatique/realforce-php-sdk.svg?maxAge=2592000)](https://packagist.org/packages/antistatique/realforce-php-sdk)
 [![License](https://poser.pugx.org/antistatique/realforce-php-sdk/license)](https://packagist.org/packages/antistatique/realforce-php-sdk)
-[![PHP Versions Supported](https://img.shields.io/badge/php-%3E%3D%208.3-8892BF.svg)](https://packagist.org/packages/antistatique/realforce-php-sdk)
+[![PHP Versions Supported](https://img.shields.io/badge/php-%5E8.3-8892BF.svg)](https://packagist.org/packages/antistatique/realforce-php-sdk)
 
 Getting started
 ------------

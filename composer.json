@@ -3,7 +3,7 @@
   "description": "Super-simple, minimum abstraction Realforce API v1.x wrapper, in PHP",
   "license": "MIT",
   "require": {
-    "php": ">=8.3",
+    "php": "^8.3",
     "ext-curl": "*",
     "ext-json": "*"
   },
