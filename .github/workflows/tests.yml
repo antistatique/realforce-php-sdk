@@ -35,7 +35,7 @@ jobs:
               tools: composer:v2
               php-version: ${{ matrix.php-versions }}
               coverage: ${{ matrix.php-versions == env.COVERAGE_PHP_VERSION && 'xdebug' || 'none' }}
-        - uses: actions/checkout@v5
+        - uses: actions/checkout@v7
         - uses: php-actions/composer@v6
           with:
               php_version: ${{ matrix.php-versions }}
