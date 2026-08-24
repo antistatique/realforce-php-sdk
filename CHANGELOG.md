@@ -10,13 +10,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 - fix(dependabot): remove config that silently disabled all version updates
-
-### Changed
-- fix(composer): bound the php constraint (>=8.3 => ^8.3)
 - fix(ci): run workflows on pull_request so fork contributions get CI
 - fix(php85): remove deprecated calls and fail the suite on new ones
 - fix(resource): build endpoint URLs without a duplicated slash
 - fix(curl): type cURL handles as CurlHandle and check curl_init failure
+- fix(http): reject malformed URLs instead of failing with a TypeError
+- fix(auth): send the X-API-KEY header for a falsy-but-valid token
+- fix(http): treat an empty 2xx body as a success instead of a failure
+- fix(request): raise a LogicException when the mandatory lang is missing
+
+### Changed
+- fix(composer): bound the php constraint (>=8.3 => ^8.3)
+- fix(linter): raise psalm errorLevel (7 => 2)
 
 ### Removed
 - chore(deps): drop unused phpmd/phpmd dev dependency
@@ -32,7 +37,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - test(coverage): increase coverage by covering RealforceClient::getLastResponseHttpStatus
 - test(coverage): increase coverage by covering LocationsRequest getters & setters
 - feat(php): add official support for PHP 8.5
-- test(resource): assert verb, URL and timeout passed to makeRequest
 
 [Unreleased]: https://github.com/antistatique/realforce-php-sdk/compare/1.0.0...HEAD
 [1.0.0]: https://github.com/antistatique/realforce-php-sdk/releases/tag/1.0.0

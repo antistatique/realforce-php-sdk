@@ -15,7 +15,7 @@ final class PublicProperties extends AbstractResource
     /**
      * The Realforce Properties base API URL.
      */
-    public const BASE_URL = 'https://listings.realforce.ch/api/v1/';
+    public const string BASE_URL = 'https://listings.realforce.ch/api/v1/';
 
     /**
      * Fetch a list of published properties' public data.
