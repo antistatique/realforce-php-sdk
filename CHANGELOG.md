@@ -5,9 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [1.0.1] - 2026-08-24
 ### Added
 - test(resource): assert verb, URL and timeout passed to makeRequest
-- test(coverage): cover the __call resource-type guard
+- test(coverage): cover the \__call resource-type guard
 
 ### Fixed
 - fix(dependabot): remove config that silently disabled all version updates
@@ -19,7 +21,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - fix(auth): send the X-API-KEY header for a falsy-but-valid token
 - fix(http): treat an empty 2xx body as a success instead of a failure
 - fix(request): raise a LogicException when the mandatory lang is missing
-- fix(api): tighten getApiToken/getLastError return types and unmask __call errors
+- fix(api): tighten getApiToken/getLastError return types and unmask \__call errors
 - fix(ci): report coverage to Coveralls from a single matrix leg
 
 ### Changed
@@ -41,5 +43,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - test(coverage): increase coverage by covering LocationsRequest getters & setters
 - feat(php): add official support for PHP 8.5
 
-[Unreleased]: https://github.com/antistatique/realforce-php-sdk/compare/1.0.0...HEAD
+[Unreleased]: https://github.com/antistatique/realforce-php-sdk/compare/1.0.1...HEAD
+[1.0.1]: https://github.com/antistatique/realforce-php-sdk/compare/1.0.0...1.0.1
 [1.0.0]: https://github.com/antistatique/realforce-php-sdk/releases/tag/1.0.0
