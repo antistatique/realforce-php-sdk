@@ -12,7 +12,7 @@
     "symfony/dotenv": "^7.3",
     "friendsofphp/php-cs-fixer": "^3.95",
     "php-coveralls/php-coveralls": "^2.8",
-    "php-mock/php-mock-phpunit": "^2.13",
+    "php-mock/php-mock-phpunit": "^2.15",
     "vimeo/psalm": "^6.13",
     "phpunit/php-code-coverage": "^12.4"
   },
