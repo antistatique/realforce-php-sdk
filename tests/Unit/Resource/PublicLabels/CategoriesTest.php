@@ -27,15 +27,17 @@ final class CategoriesTest extends TestCase
     {
         $response = json_decode(file_get_contents(__DIR__.'/../../responses/publicLabels/categories.200.json'), true, 512, JSON_THROW_ON_ERROR);
 
+        $query = (new I18nRequest())->lang(['fr']);
+
         $rf_mock = $this->getMockBuilder(RealforceClient::class)
           ->onlyMethods(['makeRequest'])
           ->getMock();
 
         $rf_mock->expects(self::once())
           ->method('makeRequest')
+          ->with('get', 'https://labels.realforce.ch/api/v1/get-categories-labels', $query->toArray(), RealforceClient::TIMEOUT)
           ->willReturn($response);
 
-        $query = (new I18nRequest())->lang(['fr']);
         $response = $rf_mock->publicLabels()->categories($query);
         self::assertIsArray($response);
     }
