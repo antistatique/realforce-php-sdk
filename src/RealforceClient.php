@@ -224,7 +224,7 @@ class RealforceClient
      *
      * @throws \Exception
      */
-    protected function determineSuccess(array $response, $formattedResponse, int $timeout): bool
+    protected function determineSuccess(array $response, array|false $formattedResponse, int $timeout): bool
     {
         $status = $this->findHttpStatus($response, $formattedResponse);
         $this->lastResponseHttpStatus = $status;
@@ -260,7 +260,7 @@ class RealforceClient
      *
      * @return int HTTP status code
      */
-    protected function findHttpStatus(array $response, $formattedResponse): int
+    protected function findHttpStatus(array $response, array|false $formattedResponse): int
     {
         if (!empty($response['headers']) && isset($response['headers']['http_code'])) {
             return (int) $response['headers']['http_code'];
@@ -278,7 +278,7 @@ class RealforceClient
      *
      * @throws \JsonException
      */
-    protected function formatResponse(array $response)
+    protected function formatResponse(array $response): array|false
     {
         $this->lastResponse = $response;
 
@@ -286,9 +286,12 @@ class RealforceClient
             return [];
         }
 
-        // Return the decoded response from JSON when reponse is a valid json.
-        // Will return FALSE otherwise.
-        return ($result = json_decode($response['body'], true, 512, \JSON_THROW_ON_ERROR)) ? $result : false;
+        // Return the decoded response from JSON when the response is a valid
+        // JSON object or array. Will return FALSE otherwise (including for
+        // scalar JSON values such as "abc" or 42).
+        $result = json_decode($response['body'], true, 512, \JSON_THROW_ON_ERROR);
+
+        return \is_array($result) && $result ? $result : false;
     }
 
     /**
@@ -338,7 +341,7 @@ class RealforceClient
      *
      * @throws \Exception
      */
-    public function makeRequest(string $http_verb, string $url, array $args = [], int $timeout = self::TIMEOUT)
+    public function makeRequest(string $http_verb, string $url, array $args = [], int $timeout = self::TIMEOUT): array|bool
     {
         $response = $this->prepareStateForRequest($http_verb, $url, $timeout);
 
