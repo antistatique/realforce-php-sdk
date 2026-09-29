@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - docs(readme): use shields.io for the license badge
 - chore(composer): add keywords, support links and sort-packages for Packagist discoverability
+- refactor(client): add native return and parameter types to makeRequest, formatResponse, determineSuccess and findHttpStatus
 
 ## [1.0.1] - 2026-08-24
 ### Added

@@ -301,7 +301,7 @@ final class MakeRequestTestableRealforceClient extends RealforceClient
         $this->mockDetermineSuccess = $success;
     }
 
-    protected function formatResponse(array $response)
+    protected function formatResponse(array $response): array|false
     {
         if (null !== $this->mockFormatResponse) {
             return $this->mockFormatResponse;
@@ -310,7 +310,7 @@ final class MakeRequestTestableRealforceClient extends RealforceClient
         return $this->mockResponse;
     }
 
-    protected function determineSuccess(array $response, $formattedResponse, int $timeout): bool
+    protected function determineSuccess(array $response, array|false $formattedResponse, int $timeout): bool
     {
         if (null !== $this->mockDetermineSuccess) {
             return $this->mockDetermineSuccess;
