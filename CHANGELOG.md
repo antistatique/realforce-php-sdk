@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - fix(git): untrack and ignore .phpunit.result.cache
 
+### Changed
+- docs(readme): use shields.io for the license badge
+
 ## [1.0.1] - 2026-08-24
 ### Added
 - test(resource): assert verb, URL and timeout passed to makeRequest
