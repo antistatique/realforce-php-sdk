@@ -24,7 +24,7 @@
     "phpunit/php-code-coverage": "^12.4",
     "phpunit/phpunit": "^12.3",
     "symfony/dotenv": "^7.3",
-    "vimeo/psalm": "^6.18"
+    "vimeo/psalm": "^6.20"
   },
   "autoload": {
     "psr-4": {
